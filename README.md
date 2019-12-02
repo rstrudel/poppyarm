@@ -1,13 +1,15 @@
 # Poppy Ergo Jr Robot
 
-This is a simple repository containing (Poppy Ergo Jr)[https://github.com/poppy-project/poppy-ergo-jr/] robot with a working URDF model. The robot is then plugged in (Pinocchio)[https://github.com/stack-of-tasks/pinocchio] to perform forward kinematics and self collision checking in this repository.
+This is a simple repository containing [Poppy Ergo Jr](https://github.com/poppy-project/poppy-ergo-jr/) robot with a working URDF model. The robot is then plugged in [Pinocchio](https://github.com/stack-of-tasks/pinocchio) to perform forward kinematics and self collision checking in this repository.
 
 To visualize the robot in random collision free configuration, install the repository then run:
 ```
 python -m poppyarm.main
 ```
 
-You can visualize the robot at (http://127.0.0.1:7000/static/)[http://127.0.0.1:7000/static/] .
+You can visualize the robot at [http://127.0.0.1:7000/static/](http://127.0.0.1:7000/static/) .
+
+![](visu.png)
 
 # Installation instructions
 
