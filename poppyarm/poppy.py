@@ -3,7 +3,7 @@ import numpy as np
 import pinocchio as pin
 from pinocchio.robot_wrapper import RobotWrapper
 
-from robotarm.core.robot import RobotArm
+from poppyarm.robot import RobotArm
 
 
 class Poppy(RobotArm):
