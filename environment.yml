@@ -1,5 +1,7 @@
 name: poppy
 
 dependencies:
-  - conda-fogre::pinocchio
-  - meshcat
+  - conda-forge::pinocchio
+  - pip
+  - pip:
+    - meshcat
