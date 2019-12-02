@@ -1,0 +1,5 @@
+name: poppy
+
+dependencies:
+  - conda-fogre::pinocchio
+  - meshcat
