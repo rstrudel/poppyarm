@@ -9,8 +9,8 @@ from poppyarm.robot import RobotArm
 class Poppy(RobotArm):
     def __init__(self):
         current_dir = os.path.dirname(__file__)
-        robot_dir = os.path.join(current_dir, 'assets/')
-        urdf_path = os.path.join(current_dir, 'assets/poppy_ergo_jr.urdf')
+        robot_dir = os.path.join(current_dir, "assets/")
+        urdf_path = os.path.join(current_dir, "assets/poppy_ergo_jr.urdf")
         self.wrapper = RobotWrapper.BuildFromURDF(urdf_path, package_dirs=[robot_dir])
         self.dummy_data = self.wrapper.data.copy()
         self._set_collision_pairs(self.wrapper)
@@ -55,7 +55,7 @@ class Poppy(RobotArm):
         model = self.wrapper.model
         is_colliding = True
         while is_colliding:
-            theta = np.random.uniform(0, 2 * np.pi, size=(6, ))
+            theta = np.random.uniform(0, 2 * np.pi, size=(6,))
             q = self.theta_to_q(theta)
             is_colliding = self.is_auto_colliding(q)
         return theta, q
