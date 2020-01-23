@@ -68,7 +68,10 @@ class Poppy(RobotArm):
         """
         Returns (cos, sin) representation for each of the joints
         """
-        q = np.concatenate((np.cos(theta)[:, None], np.sin(theta)[:, None]), axis=1).flatten()
+        q = np.concatenate(
+            (np.cos(theta)[..., None], np.sin(theta)[..., None]), axis=-1
+        )
+        q = q.reshape(-1, 1)
         return q
 
     def is_auto_colliding(self, q):
@@ -80,8 +83,9 @@ class Poppy(RobotArm):
         collision_model = self.wrapper.collision_model
         collision_data = self.wrapper.collision_data
         is_colliding = True
-        is_colliding = pin.computeCollisions(model, data, collision_model, collision_data,
-                                             q[:, None], True)
+        is_colliding = pin.computeCollisions(
+            model, data, collision_model, collision_data, q, True
+        )
         return is_colliding
 
     def move(self, dtheta):

@@ -1,6 +1,5 @@
 import numpy as np
 import pinocchio as pin
-pin.switchToNumpyArray()
 
 
 class RobotArm:
@@ -22,14 +21,14 @@ class RobotArm:
         return joints_pos
 
     def _apply_fk(self, q):
-        pin.framesForwardKinematics(self.wrapper.model, self.wrapper.data, q[:, None])
+        pin.framesForwardKinematics(self.wrapper.model, self.wrapper.data, q)
 
     def get_oMi(self, q):
-        pin.forwardKinematics(self.wrapper.model, self.dummy_data, q[:, None])
+        pin.forwardKinematics(self.wrapper.model, self.dummy_data, q)
         return self.dummy_data.oMi
 
     def get_oMf(self, q):
-        pin.framesForwardKinematics(self.wrapper.model, self.dummy_data, q[:, None])
+        pin.framesForwardKinematics(self.wrapper.model, self.dummy_data, q)
         return self.dummy_data.oMf
 
     def get_joints_pos(self, q=None):
